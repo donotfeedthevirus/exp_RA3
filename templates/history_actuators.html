@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Historico Atuador{% endblock %}
+{% block content %}
+<h2>Historico de Leitura de Atuador</h2>
+<table class="table">
+  <thead><tr><th>Atuador</th><th>Command</th><th>Data/Hora</th></tr></thead>
+  <tbody>
+  {% for c in commands %}
+    <tr>
+      <td>{{ c.actuator.name }}</td>
+      <td>{{ c.command }}</td>
+      <td>{{ c.timestamp }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

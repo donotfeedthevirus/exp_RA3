@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Historico Sensor{% endblock %}
+{% block content %}
+<h2>Historico de Leitura de Sensor</h2>
+<table class="table">
+  <thead><tr><th>Sensor</th><th>Value</th><th>Data/Hora</th></tr></thead>
+  <tbody>
+  {% for r in readings %}
+    <tr>
+      <td>{{ r.sensor.name }}</td>
+      <td>{{ r.value }}</td>
+      <td>{{ r.timestamp }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

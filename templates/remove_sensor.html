@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Remover Sensor{% endblock %}
+{% block content %}
+<h2>Remover Sensor</h2>
+<form method="post">
+  <div class="mb-3">
+    <label for="sensor_id" class="form-label">Selecione um Sensor</label>
+    <select class="form-select" name="sensor_id" id="sensor_id">
+      {% for sensor in sensors %}
+      <option value="{{ sensor.id }}">{{ sensor.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <button type="submit" class="btn btn-danger">Deletar</button>
+</form>
+{% endblock %}

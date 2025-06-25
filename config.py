@@ -1,0 +1,14 @@
+MQTT_BROKER_URL = 'broker.mqttdashboard.com'
+MQTT_BROKER_PORT = 1883
+MQTT_USERNAME = ''
+MQTT_PASSWORD = ''
+MQTT_KEEPALIVE = 5000
+MQTT_TLS_ENABLED = False
+
+TOPIC_SENSOR_DHT = '/sensor/dht'
+TOPIC_SENSOR_MQ2 = '/sensor/mq2'
+TOPIC_ACTUATOR_SERVO = '/actuator/servo'
+TOPIC_ACTUATOR_BUZZER = '/actuator/buzzer'
+
+SQLALCHEMY_DATABASE_URI = 'sqlite:///iot.db'
+SQLALCHEMY_TRACK_MODIFICATIONS = False

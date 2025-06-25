@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Atuadores{% endblock %}
+{% block content %}
+<h2>Atuatores</h2>
+<ul class="list-group mb-3">
+  {% for actuator in actuators %}
+    <li class="list-group-item">{{ actuator.name }}</li>
+  {% endfor %}
+</ul>
+<a href="{{ url_for('actuators.register_actuator') }}" class="btn btn-success">Adicionar Atuador</a>
+<a href="{{ url_for('actuators.delete_actuator') }}" class="btn btn-danger">Remover Atuador</a>
+{% endblock %}

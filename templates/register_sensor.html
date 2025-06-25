@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Registrar Sensor{% endblock %}
+{% block content %}
+<h2>Registrar Sensor</h2>
+<form method="post">
+  <div class="mb-3">
+    <label for="sensor" class="form-label">Nome do Sensor</label>
+    <input type="text" class="form-control" name="sensor" id="sensor" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Adicionar</button>
+</form>
+{% endblock %}

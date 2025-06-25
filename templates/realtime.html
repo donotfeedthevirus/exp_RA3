@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Leitura Sensores{% endblock %}
+{% block content %}
+<h2>Leitura Sensores</h2>
+<ul class="list-group">
+  <li class="list-group-item">DHT (Humidade/Temperatura): <span id="dht-value">{{ dht or 'N/A' }}</span></li>
+  <li class="list-group-item">MQ2 (Gas): <span id="mq2-value">{{ mq2 or 'N/A' }}</span></li>
+</ul>
+{% endblock %}
+{% block scripts %}
+<script>
+async function fetchData() {
+  try {
+    const resp = await fetch('{{ url_for("api_sensors") }}');
+    const data = await resp.json();
+    document.getElementById('dht-value').textContent = data.dht ?? 'N/A';
+    document.getElementById('mq2-value').textContent = data.mq2 ?? 'N/A';
+  } catch (e) { console.error('Polling error:', e); }
+}
+setInterval(fetchData, 2000);
+window.addEventListener('load', fetchData);
+</script>
+{% endblock %}

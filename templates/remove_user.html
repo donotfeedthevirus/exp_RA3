@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Remover Usuario{% endblock %}
+{% block content %}
+<h2>Remover Usuario</h2>
+<form method="post">
+  <div class="mb-3">
+    <label for="user_id" class="form-label">Selecione um Usuario</label>
+    <select class="form-select" name="user_id" id="user_id">
+      {% for u in users %}
+      <option value="{{ u.id }}">{{ u.username }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <button type="submit" class="btn btn-danger">Deletar</button>
+</form>
+{% endblock %}

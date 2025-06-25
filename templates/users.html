@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Usuarios{% endblock %}
+{% block content %}
+<h2>Usuarios</h2>
+<ul class="list-group mb-3">
+  {% for u in users %}
+    <li class="list-group-item">{{ u.username }}</li>
+  {% endfor %}
+</ul>
+<a href="{{ url_for('auth.register_user') }}" class="btn btn-success">Adicionar Usuario</a>
+<a href="{{ url_for('auth.delete_user') }}" class="btn btn-danger">Remover Usuario</a>
+{% endblock %}

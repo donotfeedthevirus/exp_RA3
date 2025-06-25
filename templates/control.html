@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Controle de Dispositivos{% endblock %}
+{% block content %}
+<h2>Controle do Servo</h2>
+<form id="servo-form">
+  <div class="mb-3">
+    <label for="angle" class="form-label">Angulo (0–180)</label>
+    <input type="number" class="form-control" id="angle" name="angle" min="0" max="180" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Set Servo</button>
+</form>
+<hr>
+<h2>Controle do Buzzer</h2>
+<form id="buzzer-form">
+  <div class="mb-3">
+    <label for="frequency" class="form-label">Frequencia (Hz)</label>
+    <input type="number" class="form-control" id="frequency" name="frequency" required>
+  </div>
+  <div class="mb-3">
+    <label for="volume" class="form-label">Volume (0–100)</label>
+    <input type="number" class="form-control" id="volume" name="volume" min="0" max="100" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Set Buzzer</button>
+</form>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/control.js') }}"></script>
+{% endblock %}
